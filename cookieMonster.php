@@ -751,9 +751,10 @@ function cookieMonster_admin()
     </style>
     <h3>
         🍪 Cookie Monster Settings</h3>
+		<p>Advanced cookieconsent plugin with GDPR options, styles and categories.</p>
     <hr>
     <form method="post" action="" class="cookieMonster">
-        <h3>Layout and position</h3>
+        <h3>Layout and Position</h3>
         <label>Style:</label>
         <select name="layout">
             <option value="box" <?php if (@$settings['layout'] == 'box')
@@ -793,7 +794,7 @@ function cookieMonster_admin()
         </select><br>
         <hr>
         <h3>Language</h3>
-        <label>Default language:</label>
+        <label>Default Language:</label>
         <select name="language">
             <option value="en" <?php if (@$settings['language'] == 'en')
                 echo 'selected'; ?>>English</option>
@@ -806,14 +807,14 @@ function cookieMonster_admin()
         </select><br>
         <hr>
         <h3>Content</h3>
-        <label>Banner title: </label>
+        <label>Banner Title: </label>
         <input type="text" name="consent_title"
             value="<?php echo @$settings['text']['consentTitle'] ?: 'Consent to cookies'; ?>"><br>
         <label>Banner description:</label>
         <textarea name="consent_description"><?php echo @$settings['text']['consentDescription'] ?: 'We use cookies to improve your experience. Customize your preferences below.
 '; ?></textarea><br>
         <hr>
-        <h3>Cookie categories</h3>
+        <h3>Cookie Categories</h3>
         <label><input type="checkbox" name="categories_analytics" <?php if (@$settings['categories']['analytics'])
             echo 'checked'; ?>>Analytical</label><br>
         <label><input type="checkbox" name="categories_marketing" <?php if (@$settings['categories']['marketing'])
@@ -823,7 +824,7 @@ function cookieMonster_admin()
         <label><input type="checkbox" name="categories_social" <?php if (@$settings['categories']['social'])
             echo 'checked'; ?>> Social</label><br>
         <hr>
-        <h3>Opisy kategorii</h3>
+        <h3>Category Descriptions</h3>
         <label>Description for "Required":</label>
         <textarea
             name="desc_necessary"><?php echo @$settings['categoryDescriptions']['necessary'] ?: 'These cookies are required for the website to function..'; ?></textarea><br>
@@ -840,7 +841,7 @@ function cookieMonster_admin()
         <textarea
             name="desc_social"><?php echo @$settings['categoryDescriptions']['social'] ?: 'Social media integration.'; ?></textarea><br>
         <hr>
-        <h3>Custom cookie names</h3>
+        <h3>Custom Cookie Names</h3>
         <p>
             Enter cookie names separated by commas (e.g. cookie1, cookie2). Default cookies are automatically
             included.</p>
@@ -876,12 +877,14 @@ function cookieMonster_admin()
 
         <hr>
         <hr>
-        <h3>Option to correct settings
+        <h3>Options to adjust front-end settings
         </h3>
-        If you want to give the user the option to fix the settings and reopen the modal, paste this code into your template
+        If you want to give the user the option to adjust their settings and reopen the modal, paste this code into your template
 
         <code style="background:#fafafa;border:solid 1px #ddd;width:100%;display:block;padding:10px;margin:10px 0;">
-        &lt;a href="#" data-cc="show-preferencesModal" onclick="event.preventDefault()">Cookie Preferences&lt;/a>
+			<span class="tpl">&lt;a href="#" data-cc="show-preferencesModal" onclick="event.preventDefault()">Cookie Preferences&lt;/a></span>
+			<br>&nbsp;&nbsp; or <br>
+			<span class="tpl">&lt;button data-cc="show-preferencesModal" type="button">Cookie Preferences&lt;/button></span>
         </code>
 
         <input type="submit" name="submit" value="Save Settings">
